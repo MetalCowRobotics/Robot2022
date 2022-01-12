@@ -24,8 +24,7 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final DrivetrainSubsystem m_drivetrainSubsystem = new DrivetrainSubsystem();
 
-  private final XboxController driverControls
-   = new XboxController(0);
+  private final XboxController driverControls = new XboxController(0);
 
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
