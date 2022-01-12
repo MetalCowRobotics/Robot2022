@@ -140,6 +140,17 @@ public class DrivetrainSubsystem extends SubsystemBase {
             BACK_RIGHT_MODULE_STEER_ENCODER,
             BACK_RIGHT_MODULE_STEER_OFFSET
     );
+
+    m_backLeftModule = Mk3SwerveModuleHelper.createFalcon500(
+        tab.getLayout("Back Left Module", BuiltInLayouts.kList)
+                .withSize(2, 4)
+                .withPosition(4, 0),
+        Mk3SwerveModuleHelper.GearRatio.STANDARD,
+        BACK_LEFT_MODULE_DRIVE_MOTOR,
+        BACK_LEFT_MODULE_STEER_MOTOR,
+        BACK_LEFT_MODULE_STEER_ENCODER,
+        BACK_LEFT_MODULE_STEER_OFFSET
+);
   }
 
   /**
