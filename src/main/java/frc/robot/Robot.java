@@ -7,6 +7,11 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.commands.CheckSensor;
+import frc.robot.subsystems.Sensor;
+import frc.robot.subsystems.Cim;
+import frc.robot.commands.RunMotor;
+import frc.robot.commands.StopMotor;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -80,8 +85,13 @@ public class Robot extends TimedRobot {
   }
 
   /** This function is called periodically during operator control. */
+
+
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    // teleopCommand.schedule();
+  }
+
 
   @Override
   public void testInit() {
