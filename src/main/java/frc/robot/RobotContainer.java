@@ -29,11 +29,11 @@ import frc.robot.subsystems.Sensor;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  // private final DrivetrainSubsystem m_drivetrainSubsystem; //= new DrivetrainSubsystem();
+  private final DrivetrainSubsystem m_drivetrainSubsystem = new DrivetrainSubsystem();
   
   private final XboxController driverControls = new XboxController(0);
-  private final Cim m_cim = new Cim();
-  private final Cim2 m_cim2 = new Cim2();
+  // private final Cim m_cim = new Cim();
+  // private final Cim2 m_cim2 = new Cim2();
 
   Sensor m_sensor = new Sensor();
   
@@ -46,15 +46,7 @@ public class RobotContainer {
     // Left stick Y axis -> forward and backwards movement
     // Left stick X axis -> left and right movement
     // Right stick X axis -> rotation
-    // m_drivetrainSubsystem.setDefaultCommand(new DefaultDriveCommand(
-            // m_drivetrainSubsystem,
-            // () -> modifyAxis(-driverControls
-            // .getY(GenericHID.Hand.kLeft)) * DrivetrainSubsystem.MAX_VELOCITY_METERS_PER_SECOND,
-            // () -> -modifyAxis(driverControls
-            // .getX(GenericHID.Hand.kLeft)) * DrivetrainSubsystem.MAX_VELOCITY_METERS_PER_SECOND,
-            // () -> -modifyAxis(driverControls
-            // .getX(GenericHID.Hand.kRight)) * DrivetrainSubsystem.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND
-    // ));
+    
 
     // Configure the button bindings
     configureButtonBindings();
@@ -68,19 +60,19 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     // Back button zeros the gyroscope
-    // new Button(driverControls
-    // ::getBackButton)
+    new Button(driverControls
+    ::getBackButton)
             // No requirements because we don't need to interrupt anything
-            // .whenPressed(m_drivetrainSubsystem::zeroGyroscope);
-    new Button(driverControls
-    ::getAButton)
-    .whileHeld(new RunMotor(m_cim));
-    new Button(driverControls
-    ::getAButton)
-    .whenReleased(new StopMotor(m_cim));
+            .whenPressed(m_drivetrainSubsystem::zeroGyroscope);
+    // new Button(driverControls
+    // ::getAButton)
+    // .whileHeld(new RunMotor(m_cim));
+    // new Button(driverControls
+    // ::getAButton)
+    // .whenReleased(new StopMotor(m_cim));
 
-    new Button(m_sensor::objectInFront).whileHeld(new RunOtherMotor(m_cim2));
-    new Button(m_sensor::objectInFront).whenReleased(new StopOtherMotor(m_cim2));
+    // new Button(m_sensor::objectInFront).whileHeld(new RunOtherMotor(m_cim2));
+    // new Button(m_sensor::objectInFront).whenReleased(new StopOtherMotor(m_cim2));
   }
 
   /**
